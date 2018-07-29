@@ -15,43 +15,26 @@ High Level is checkout the REPO and compiled in Netbeans or other.
 ## Build Application into a Docker Container
 (Docker or Build Host)
 * Checkout the Repo.
-  * git clone https://github.com/tkrausjr/go-http.git
-  * cd ./go-http
+  * git clone https://github.com/tkrausjr/HelloWebPKS.git
+  * cd ./HelloWebPKS
 * Build the Go Binaries from Src.
   * docker build -t hellowwebpks:v2 .
 * SHOW Build Output
   * docker images
 * Test Locally:
-  * docker run -p 8080:8080 --name="testing-conference-app:latest" -d conference-app
-
-1. kraust: ~/gitHub/HelloWebPKS $ docker build -t hellowwebpks:v2 .
-    1. Sending build context to Docker daemon  272.4kB
-    2. Step 1/4 : FROM tomcat
-    3.  ---> 2d43521f2b1a
-    4. Step 2/4 : MAINTAINER TKraus
-    5.  ---> Using cache
-    6.  ---> 3df5829cc2f6
-    7. Step 3/4 : COPY /dist/HelloWebPKS.war /usr/local/tomcat/webapps/HelloWebPKS.war
-    8.  ---> Using cache
-    9.  ---> e0e82275a9da
-    10. Step 4/4 : EXPOSE 8080:8080
-    11.  ---> Using cache
-    12.  ---> 855794fafd89
-    13. Successfully built 855794fafd89
-    14. Successfully tagged hellowwebpks:v2
-2. kraust: ~/gitHub/HelloWebPKS $ docker run -p 8080:8080 hellowwebpks:v2
+  * docker run -p 8080:8080 hellowwebpks:v2
 
 ## Push the Image to a new Repository
 * (Optional) Log in to new repository
-  * docker login 10.173.13.31 -u admin
+  * docker login harbor.tpmlab.vmware.com -u admin
 * Tag the newly built image
-  * docker tag conference-app:latest 10.173.13.31/conference/conference-app:latest
+  * docker tag hellowwebpks:v2 harbor.tpmlab.vmware.com/library/hellowwebpks:v2
 * Push the newly built image.
-  * docker push 10.173.13.31/conference/conference-app:latest
+  * docker push harbor.tpmlab.vmware.com/library/hellowwebpks:v2
 
 ## Run the site in Kubernetes Cluster
 * Create a Deployment with the Image 
-  * kubectl run conference-app --replicas=2 --labels="run=conference-app" --image=tkrausjr/conference-app:latest --port=8080
+  * kubectl run  --replicas=2 --labels="run=conference-app" --image=tkrausjr/conference-app:latest --port=8080
 * Create an externally accessible Service for the Deployment
   * kubectl expose deployment conference-app --type=NodePort --name=conference-app
 * Get NodePort: Value  (Ex. 32449 )
