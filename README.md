@@ -16,7 +16,7 @@ Artifact is a WAR file located in /dist folder.
 * Checkout the Repo.
   * git clone https://github.com/tkrausjr/HelloWebPKS.git
   * cd ./HelloWebPKS
-* Build the Java Class from Src.
+* Build the Compiled WAR file into a Tomcat Docker Image and Save.
   * docker build -t hellowwebpks:v2 .
 * SHOW Build Output
   * docker images
@@ -40,8 +40,4 @@ Artifact is a WAR file located in /dist folder.
   * kubectl get svc
 * Now you can test access at http://<ExternalIP>:8080/HelloWebPKS/
   * Chrome http://10.51.0.56:8080/HelloWebPKS/
-
-## Test
-* Note the PORT the server is Listening on:
-* Open Chrome and navigate to http://localhost:<port>  Defaults to :8080 
 
