@@ -1,13 +1,11 @@
 # HelloWebPKS
-* Tested on OSX 10.12.6 and go 1.9
+* Develeoped on OSX 10.12.6 and Netbeans 8.2 and JRE and JDK 1.8
 
-## Install JAVA
-* This is not necessary as we will use a golang base container in our Dockerfile.
 
 ## Application Build Step
 High Level is checkout the REPO and compiled in Netbeans or other.
 
-## Test Application running in a Container with a tomcat
+## Test Application running in a tomcat Container 
 1. $ docker run -it -p 8088:8080 -v $(PWD)/dist/HelloWebPKS.war:/usr/local/tomcat/webapps/HelloWebPKS.war tomcat
 2. TEST by accessing the port on local
   http://localhost:8088/HelloWebPKS/
