@@ -17,5 +17,6 @@
         <jsp:useBean id="mybean" scope="session" class="org.mypackage.hello.NameHandler" />
         <jsp:setProperty name="mybean" property="name" />
         <h1>Hello, <jsp:getProperty name="mybean" property="name" />!</h1>
+        <h1> Are you in the CNABU ???? </h1>
     </body>
 </html>
