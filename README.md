@@ -2,8 +2,9 @@
 * Develeoped on OSX 10.12.6 and Netbeans 8.2 and JRE and JDK 1.8
 
 
-## Application Build Step
-High Level is checkout the REPO and compiled in Netbeans or other.
+## Application Build from Source
+High Level is checkout the REPO and compile in Netbeans or use Maven.
+Artifact is a WAR file located in /dist folder.
 
 ## Test Application running in a tomcat Container 
 1. $ docker run -it -p 8088:8080 -v $(PWD)/dist/HelloWebPKS.war:/usr/local/tomcat/webapps/HelloWebPKS.war tomcat
