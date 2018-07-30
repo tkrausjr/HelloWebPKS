@@ -7,8 +7,8 @@ High Level is checkout the REPO and compile in Netbeans or use Maven.
 Artifact is a WAR file located in /dist folder.
 
 ## Test Application running in a tomcat Container 
-1. $ docker run -it -p 8088:8080 -v $(PWD)/dist/HelloWebPKS.war:/usr/local/tomcat/webapps/HelloWebPKS.war tomcat
-2. TEST by accessing the port on local
+* docker run -it -p 8088:8080 -v $(PWD)/dist/HelloWebPKS.war:/usr/local/tomcat/webapps/HelloWebPKS.war tomcat
+* TEST by accessing the port on local
   http://localhost:8088/HelloWebPKS/
 
 ## Build Application into a Docker Container
@@ -16,7 +16,7 @@ Artifact is a WAR file located in /dist folder.
 * Checkout the Repo.
   * git clone https://github.com/tkrausjr/HelloWebPKS.git
   * cd ./HelloWebPKS
-* Build the Go Binaries from Src.
+* Build the Java Class from Src.
   * docker build -t hellowwebpks:v2 .
 * SHOW Build Output
   * docker images
