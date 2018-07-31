@@ -2,6 +2,7 @@
 # and build a new Docker Image 
 # Copy in the WAR file for the HelloWebPKS.war
 # Listening on port TCP 8088
+# TKraus
 
 FROM tomcat
 
